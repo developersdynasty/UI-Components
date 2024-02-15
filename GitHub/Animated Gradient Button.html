@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Gradient Button</title>
+  <link rel="stylesheet" href="animated_gradient.css">
+</head>
+<body>
+
+
+  <a href="#" class="animated-gradient-btn">
+    Animated Gradient Button
+  </a>
+
+  <style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.animated-gradient-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #3498db, #e74c3c);
+    border-radius: 5px;
+    animation: changeColor 1.4s infinite alternate;
+    transition: transform 0.4s ease;
+}
+
+
+@keyframes changeColor {
+    0% {
+        background: linear-gradient(45deg, #3498db, #e74c3c);
+    }
+    50% {
+        background: linear-gradient(45deg, #2ecc71, #f39c12);
+    }
+    100% {
+        background: linear-gradient(45deg, #3498db, #e74c3c);
+    }
+}
+
+.animated-gradient-btn:hover {
+    transform: scale(1.1);
+}
+  </style>
+  
+</body>
+</html>

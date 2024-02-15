@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "GitHub",
+			"path": "."
+		},
+		{
+			"name": "Profile Card",
+			"path": "../Components/Profile Card"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "GitHub"
+	}
+}

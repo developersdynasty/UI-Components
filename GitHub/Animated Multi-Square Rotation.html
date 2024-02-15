@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Spinning Square</title>
+
+</head>
+<body>
+    <div class="squares">
+        <div class="sq sq01"></div>
+        <div class="sq sq02"></div>
+        <div class="sq sq03"></div>
+        <div class="sq sq04"></div>
+        <div class="sq sq05"></div>
+        <div class="sq sq06"></div>
+        <div class="sq sq07"></div>
+    </div>
+    
+
+    <style>
+        * {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #50008a;
+  box-shadow:0 0 20vmin rgba(0,0,0,0.35) inset
+}
+
+.sq {
+  width: 100%;
+  height: 100%;   
+  top: 50%;
+  left: 50%;
+  position:absolute;
+  transform:translate(-50%,-50%) rotate(45deg);
+  animation:6s R45 ease-in-out infinite;
+}
+
+@keyframes R45 {
+  0%,100% {transform:translate(-50%,-50%) rotate(50deg);}
+  50% {transform:translate(-50%,-50%) rotate(40deg);}
+}
+
+.sq:before, .sq:after {
+  display:block;
+  content:'';
+  width: 100%;
+  height: 100%;
+  background-color: #50008a;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  clip-path: polygon(2% 2%, 98% 2%, 98% 98%, 2% 98%);  
+  z-index: 2;
+  animation:6s R25 ease-in-out infinite; 
+}
+
+.sq:nth-of-type(3n):before, .sq:nth-of-type(3n):after  {animation:6s R25R ease-in-out infinite; }
+@keyframes R25 {
+  0%,100% {transform:translate(-50%,-50%) rotate(-2.5deg);}
+  33%,66% {transform:translate(-50%,-50%) rotate(2.5deg);}
+}
+
+@keyframes R25R {
+  0%,100% {transform:translate(-50%,-50%) rotate(2.5deg);}
+  33%,66% {transform:translate(-50%,-50%) rotate(-2.5deg);}
+}
+
+.sq:after {width:calc(100% + 3%); height:calc(100% + 3%); background-color: #fd00fd;z-index: 1;
+animation-delay:.20s
+}
+
+.squares {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin: -50vmin 0 0 -50vmin;
+}
+
+.sq01 {height:5vmin ;width:5vmin  ;animation-delay:-.2s; z-index:30  }
+.sq02 {height:20vmin ;width:20vmin  ;animation-delay:-.4s; z-index:28  }
+.sq03 {height:30vmin ;width:30vmin  ;animation-delay:-.6s; z-index:26  }
+.sq04 {height:40vmin ;width:40vmin  ;animation-delay:-.8s; z-index:24  }
+.sq05 {height:50vmin ;width:50vmin  ;animation-delay:-1s; z-index:22  }
+.sq06 {height:60vmin ;width:60vmin  ;animation-delay:-1.2s; z-index:20  }
+.sq07 {height:70vmin ;width:70vmin  ;animation-delay:-1.4s; z-index:18  }
+
+    </style>
+</body>
+</html>
